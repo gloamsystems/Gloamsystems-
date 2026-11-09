@@ -3,173 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gloam Systems | B2B Advisory</title>
+    <title>Gloam Systems | Freight Factoring & Contract Integrity</title>
     <style>
         :root {
             --bg-deep: #0a080f;
             --bg-card: #14101f;
             --accent-gold: #d4af37;
-            --accent-gold-hover: #e6c555;
             --text-main: #f3f0ff;
             --text-muted: #a39bb5;
             --border-subtle: #2a223f;
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-deep);
-            color: var(--text-main);
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        header {
-            width: 100%;
-            background: var(--bg-card);
-            border-bottom: 1px solid var(--border-subtle);
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .logo-container img {
-            max-height: 50px;
-            width: auto;
-            display: block;
-        }
-
-        .hero-banner {
-            width: 100%;
-            max-height: 350px;
-            overflow: hidden;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .hero-banner img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            display: block;
-        }
-
-        main {
-            flex: 1;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            width: 100%;
-        }
-
-        .intro {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .intro h1 {
-            font-size: 2.25rem;
-            font-weight: 400;
-            letter-spacing: 0.05em;
-            margin-bottom: 1rem;
-            color: var(--text-main);
-        }
-
-        .intro p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 650px;
-            margin: 0 auto;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            align-items: stretch;
-        }
-
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 6px;
-            padding: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: border-color 0.2s ease;
-        }
-
-        .card:hover {
-            border-color: var(--accent-gold);
-        }
-
-        .card-header h3 {
-            font-size: 1.35rem;
-            font-weight: 500;
-            margin-bottom: 0.75rem;
-        }
-
-        .price {
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--accent-gold);
-            margin-bottom: 1.25rem;
-        }
-
-        .price span {
-            font-size: 0.95rem;
-            font-weight: 400;
-            color: var(--text-muted);
-        }
-
-        .description {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-gold);
-            color: var(--bg-deep);
-            text-align: center;
-            padding: 0.85rem 1.5rem;
-            border-radius: 4px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background-color 0.2s ease;
-        }
-
-        .btn:hover {
-            background-color: var(--accent-gold-hover);
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid var(--border-subtle);
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            letter-spacing: 0.03em;
-        }
-
-        @media (max-width: 768px) {
-            main {
-                padding: 2rem 1rem;
-            }
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: var(--bg-deep); color: var(--text-main); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+        header { width: 100%; background: var(--bg-card); border-bottom: 1px solid var(--border-subtle); padding: 1.5rem 2rem; display: flex; justify-content: center; }
+        .logo-container img { max-height: 50px; width: auto; display: block; }
+        .hero-banner { width: 100%; max-height: 350px; overflow: hidden; border-bottom: 1px solid var(--border-subtle); }
+        .hero-banner img { width: 100%; height: auto; object-fit: cover; display: block; }
+        main { flex: 1; max-width: 800px; margin: 0 auto; padding: 5rem 2rem; text-align: center; width: 100%; }
+        h1 { font-size: 2.5rem; font-weight: 400; margin-bottom: 1.5rem; letter-spacing: 0.05em; }
+        p { color: var(--text-muted); font-size: 1.15rem; margin-bottom: 2.5rem; }
+        .badge { display: inline-block; background: var(--bg-card); border: 1px solid var(--accent-gold); color: var(--accent-gold); padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2rem; }
+        footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-subtle); color: var(--text-muted); font-size: 0.85rem; }
     </style>
 </head>
 <body>
-
     <header>
         <div class="logo-container">
             <img src="logo.png" alt="Gloam Systems Logo">
@@ -181,41 +38,13 @@
     </div>
 
     <main>
-        <section class="intro">
-            <h1>Precision Financial Engineering</h1>
-            <p>Accelerating cash flow cycles, optimizing ledgers, and stabilizing operational liquidity for modern businesses.</p>
-        </section>
-
-        <section class="pricing-grid">
-            <!-- Tier 1: Accounts Receivable & Factoring Advisory -->
-            <div class="card">
-                <div class="card-header">
-                    <h3>Accounts Receivable & Factoring Advisory</h3>
-                    <div class="price">$1,500 <span>/ month</span></div>
-                    <p class="description">Accelerating liquidity and stabilizing cash flow cycles through invoice ledger optimization, Days Sales Outstanding (DSO) reduction, and structured collection workflows.</p>
-                </div>
-                <div class="card-action">
-                    <a href="https://buy.stripe.com/28EbJ2a286ok5aj50928800" target="_blank" class="btn">Secure Advisory Tier</a>
-                </div>
-            </div>
-
-            <!-- Tier 2: Billing & Operational Audits -->
-            <div class="card">
-                <div class="card-header">
-                    <h3>Billing & Operational Audits</h3>
-                    <div class="price">$950 <span>one-time</span></div>
-                    <p class="description">A surgical diagnostic review of your billing lifecycle, accounts receivable bottlenecks, and revenue leakage points with actionable remediation steps.</p>
-                </div>
-                <div class="card-action">
-                    <a href="https://buy.stripe.com/aFa00k5LSbIE9qz6Sd28801" target="_blank" class="btn">Book Audit Session</a>
-                </div>
-            </div>
-        </section>
+        <div class="badge">System Preview & Development</div>
+        <h1>Automated Factoring & Contract Integrity for Trucking Bookkeepers</h1>
+        <p>Gloam Systems is currently architecting a zero-labor, self-service engine designed to parse rate confirmations, flag hidden factoring fees, and audit ledger integrity automatically. Public access is currently paused during platform development.</p>
     </main>
 
     <footer>
-        &copy; 2026 Gloam Systems. All rights reserved. Verify &bull; Audit &bull; Empower.
+        &copy; 2026 Gloam Systems. All rights reserved.
     </footer>
-
 </body>
 </html>
