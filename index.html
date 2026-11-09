@@ -3,181 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gloam Systems — B2B Advisory & Operational Audits</title>
+    <title>Gloam Systems | B2B Advisory</title>
     <style>
         :root {
-            --bg-color: #0b0c10;
-            --card-bg: #12141a;
-            --text-main: #c5c6c7;
-            --text-bright: #ffffff;
-            --accent: #66fcf1;
-            --accent-dim: #45a29e;
-            --border: #1f2833;
+            --bg-deep: #0a080f;
+            --bg-card: #14101f;
+            --accent-gold: #d4af37;
+            --accent-gold-hover: #e6c555;
+            --text-main: #f3f0ff;
+            --text-muted: #a39bb5;
+            --border-subtle: #2a223f;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
+            background-color: var(--bg-deep);
             color: var(--text-main);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 4rem 2rem;
+            line-height: 1.6;
             display: flex;
-            justify-content: center;
-        }
-
-        .container {
-            max-width: 800px;
-            width: 100%;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
+            width: 100%;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-container img {
+            max-height: 50px;
+            width: auto;
+            display: block;
+        }
+
+        .hero-banner {
+            width: 100%;
+            max-height: 350px;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+
+        main {
+            flex: 1;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            width: 100%;
+        }
+
+        .intro {
+            text-align: center;
             margin-bottom: 4rem;
         }
 
-        h1 {
-            color: var(--text-bright);
-            font-size: 2.5rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
+        .intro h1 {
+            font-size: 2.25rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
             margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        p.hero-sub {
-            font-size: 1.15rem;
-            line-height: 1.6;
             color: var(--text-main);
-            margin-bottom: 2rem;
         }
 
-        .services {
+        .intro p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
-            margin-bottom: 4rem;
+            align-items: stretch;
         }
 
-        .service-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 2rem;
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            padding: 2.5rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: border-color 0.2s ease;
         }
 
-        .service-card h2 {
-            color: var(--text-bright);
-            font-size: 1.4rem;
-            margin-top: 0;
+        .card:hover {
+            border-color: var(--accent-gold);
+        }
+
+        .card-header h3 {
+            font-size: 1.35rem;
+            font-weight: 500;
             margin-bottom: 0.75rem;
         }
 
-        .service-card p {
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .price-tag {
-            color: var(--accent);
-            font-size: 1.2rem;
+        .price {
+            font-size: 2rem;
             font-weight: 600;
-            margin-bottom: 1.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.25rem;
         }
 
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+        .price span {
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
         }
 
         .btn {
             display: inline-block;
-            background-color: transparent;
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            padding: 0.75rem 1.5rem;
+            background-color: var(--accent-gold);
+            color: var(--bg-deep);
+            text-align: center;
+            padding: 0.85rem 1.5rem;
             border-radius: 4px;
+            font-weight: 600;
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s ease;
+            transition: background-color 0.2s ease;
         }
 
         .btn:hover {
-            background-color: var(--accent);
-            color: var(--bg-color);
-        }
-
-        .btn-secondary {
-            border-color: var(--border);
-            color: var(--text-main);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--border);
-            color: var(--text-bright);
+            background-color: var(--accent-gold-hover);
         }
 
         footer {
-            border-top: 1px solid var(--border);
-            padding-top: 2rem;
-            font-size: 0.9rem;
-            line-height: 1.8;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
         }
 
-        footer a {
-            color: var(--accent-dim);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: var(--accent);
+        @media (max-width: 768px) {
+            main {
+                padding: 2rem 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Optimize Cash Flow.<br>Eliminate Operational Friction.</h1>
-            <p class="hero-sub">Specialized B2B advisory for accounts receivable factoring, cash flow acceleration, and medical/commercial billing workflow audits. Built for precision and scale.</p>
-            <a href="mailto:support@gloamsystems.com" class="btn">Contact Advisory</a>
-        </header>
 
-        <main class="services">
-            <div class="service-card">
-                <div>
-                    <h2>Accounts Receivable & Factoring Advisory</h2>
-                    <p>Accelerating liquidity and stabilizing cash flow cycles through invoice ledger optimization, Days Sales Outstanding (DSO) reduction, and structured collection workflows.</p>
-                    <div class="price-tag">Retainer / Advisory Tier</div>
-                </div>
-                <div class="btn-group">
-                    <!-- Replace href with your actual Stripe Payment Link when ready -->
-                    <a href="https://buy.stripe.com/your-stripe-link-here" target="_blank" class="btn">Secure Advisory Tier</a>
-                    <a href="mailto:factoring@gloamsystems.com" class="btn btn-secondary">Direct Inquiry</a>
-                </div>
-            </div>
+    <header>
+        <div class="logo-container">
+            <!-- Ensure your logo file in GitHub is named logo.png -->
+            <img src="logo.png" alt="Gloam Systems Logo">
+        </div>
+    </header>
 
-            <div class="service-card">
-                <div>
-                    <h2>Billing & Operational Audits</h2>
-                    <p>Diagnostic reviews to uncover revenue leakage, reduce error rates, and ensure rigorous compliance across complex medical and commercial billing environments.</p>
-                    <div class="price-tag">Diagnostic Audit Session</div>
-                </div>
-                <div class="btn-group">
-                    <!-- Replace href with your actual Stripe Payment Link when ready -->
-                    <a href="https://buy.stripe.com/your-stripe-link-here" target="_blank" class="btn">Book Audit Session</a>
-                    <a href="mailto:workaudit@gloamsystems.com" class="btn btn-secondary">Direct Inquiry</a>
-                </div>
-            </div>
-        </main>
-
-        <footer>
-            <strong>Direct Routing:</strong><br>
-            General Inquiries: <a href="mailto:support@gloamsystems.com">support@gloamsystems.com</a><br>
-            Factoring & AR: <a href="mailto:factoring@gloamsystems.com">factoring@gloamsystems.com</a><br>
-            Audits & Compliance: <a href="mailto:workaudit@gloamsystems.com">workaudit@gloamsystems.com</a>
-        </footer>
+    <div class="hero-banner">
+        <!-- Ensure your banner file in GitHub is named banner.jpg -->
+        <img src="banner.jpg" alt="Gloam Systems Banner">
     </div>
+
+    <main>
+        <section class="intro">
+            <h1>Precision Financial Engineering</h1>
+            <p>Accelerating cash flow cycles, optimizing ledgers, and stabilizing operational liquidity for modern businesses.</p>
+        </section>
+
+        <section class="pricing-grid">
+            <!-- Tier 1: Accounts Receivable & Factoring Advisory -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Accounts Receivable & Factoring Advisory</h3>
+                    <div class="price">$1,500 <span>/ month</span></div>
+                    <p class="description">Accelerating liquidity and stabilizing cash flow cycles through invoice ledger optimization, Days Sales Outstanding (DSO) reduction, and structured collection workflows.</p>
+                </div>
+                <div class="card-action">
+                    <a href="https://buy.stripe.com/28EbJ2a286ok5aj50928800" target="_blank" class="btn">Secure Advisory Tier</a>
+                </div>
+            </div>
+
+            <!-- Tier 2: Billing & Operational Audits -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>Billing & Operational Audits</h3>
+                    <div class="price">$950 <span>one-time</span></div>
+                    <p class="description">A surgical diagnostic review of your billing lifecycle, accounts receivable bottlenecks, and revenue leakage points with actionable remediation steps.</p>
+                </div>
+                <div class="card-action">
+                    <a href="https://buy.stripe.com/aFa00k5LSbIE9qz6Sd28801" target="_blank" class="btn">Book Audit Session</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 Gloam Systems. All rights reserved. Verify &bull; Audit &bull; Empower.
+    </footer>
+
 </body>
 </html>
